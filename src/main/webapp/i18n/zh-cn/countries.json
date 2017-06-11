@@ -1,0 +1,21 @@
+{
+    "nearepApp": {
+        "countries" : {
+            "home": {
+                "title": "Countries",
+                "createLabel": "Create a new Countries",
+                "createOrEditLabel": "Create or edit a Countries"
+            },
+            "created": "A new Countries is created with identifier {{ param }}",
+            "updated": "A Countries is updated with identifier {{ param }}",
+            "deleted": "A Countries is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Countries {{ id }}?"
+            },
+            "detail": {
+                "title": "Countries"
+            },
+            "countryName": "Country Name"
+        }
+    }
+}

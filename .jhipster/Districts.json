@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "cityName",
+            "otherEntityName": "cities",
+            "otherEntityField": "cityName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "districtName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 30
+        },
+        {
+            "fieldName": "postCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        }
+    ],
+    "changelogDate": "20170611120759",
+    "entityTableName": "districts",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

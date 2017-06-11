@@ -1,0 +1,31 @@
+
+<div *ngIf="cities">
+    <h2><span jhiTranslate="nearepApp.cities.detail.title">Cities</span> {{cities.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="nearepApp.cities.cityName">City Name</span></dt>
+        <dd>
+            <span>{{cities.cityName}}</span>
+        </dd>
+        <dt><span jhiTranslate="nearepApp.cities.provinceName">Province Name</span></dt>
+        <dd>
+            <div *ngIf="cities.provinceName">
+                <a [routerLink]="['/provinces', cities.provinceName?.id]">{{cities.provinceName?.provinceName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'cities/'+ cities.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

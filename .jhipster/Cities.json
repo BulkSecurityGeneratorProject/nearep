@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "provinceName",
+            "otherEntityName": "provinces",
+            "otherEntityField": "provinceName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "cityName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 30
+        }
+    ],
+    "changelogDate": "20170611120758",
+    "entityTableName": "cities",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

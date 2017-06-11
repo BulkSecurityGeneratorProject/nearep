@@ -1,0 +1,22 @@
+{
+    "nearepApp": {
+        "provinces" : {
+            "home": {
+                "title": "Provinces",
+                "createLabel": "Create a new Provinces",
+                "createOrEditLabel": "Create or edit a Provinces"
+            },
+            "created": "A new Provinces is created with identifier {{ param }}",
+            "updated": "A Provinces is updated with identifier {{ param }}",
+            "deleted": "A Provinces is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Provinces {{ id }}?"
+            },
+            "detail": {
+                "title": "Provinces"
+            },
+            "provinceName": "Province Name",
+            "countryName": "Country Name"
+        }
+    }
+}

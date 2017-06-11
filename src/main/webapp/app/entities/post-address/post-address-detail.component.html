@@ -1,0 +1,43 @@
+
+<div *ngIf="postAddress">
+    <h2><span jhiTranslate="nearepApp.postAddress.detail.title">Post Address</span> {{postAddress.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="nearepApp.postAddress.streetAddress">Street Address</span></dt>
+        <dd>
+            <span>{{postAddress.streetAddress}}</span>
+        </dd>
+        <dt><span jhiTranslate="nearepApp.postAddress.officeTel">Office Tel</span></dt>
+        <dd>
+            <span>{{postAddress.officeTel}}</span>
+        </dd>
+        <dt><span jhiTranslate="nearepApp.postAddress.officeFax">Office Fax</span></dt>
+        <dd>
+            <span>{{postAddress.officeFax}}</span>
+        </dd>
+        <dt><span jhiTranslate="nearepApp.postAddress.officeEmail">Office Email</span></dt>
+        <dd>
+            <span>{{postAddress.officeEmail}}</span>
+        </dd>
+        <dt><span jhiTranslate="nearepApp.postAddress.districtName">District Name</span></dt>
+        <dd>
+            <div *ngIf="postAddress.districtName">
+                <a [routerLink]="['/districts', postAddress.districtName?.id]">{{postAddress.districtName?.districtName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'post-address/'+ postAddress.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

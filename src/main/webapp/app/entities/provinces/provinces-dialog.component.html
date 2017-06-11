@@ -1,0 +1,52 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myProvincesLabel" jhiTranslate="nearepApp.provinces.home.createOrEditLabel">Create or edit a Provinces</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!provinces.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="provinces.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nearepApp.provinces.provinceName" for="field_provinceName">Province Name</label>
+            <input type="text" class="form-control" name="provinceName" id="field_provinceName"
+                [(ngModel)]="provinces.provinceName" required maxlength="30" />
+            <div [hidden]="!(editForm.controls.provinceName?.dirty && editForm.controls.provinceName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.provinceName?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.provinceName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 30 }">
+                   This field cannot be longer than 30 characters.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="nearepApp.provinces.countryName" for="field_countryName">Country Name</label>
+            <select class="form-control" id="field_countryName" name="countryName" [(ngModel)]="provinces.countryName"  required>
+                <option [ngValue]="countriesOption.id === provinces.countryName?.id ? provinces.countryName : countriesOption" *ngFor="let countriesOption of countries; trackBy: trackCountriesById">{{countriesOption.countryName}}</option>
+            </select>
+        </div>
+        <div [hidden]="!(editForm.controls.countryName?.dirty && editForm.controls.countryName?.invalid)">
+            <small class="form-text text-danger"
+                [hidden]="!editForm.controls.countryName?.errors?.required" jhiTranslate="entity.validation.required">
+                This field is required.
+            </small>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

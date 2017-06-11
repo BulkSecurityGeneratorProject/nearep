@@ -1,0 +1,23 @@
+{
+    "nearepApp": {
+        "districts" : {
+            "home": {
+                "title": "Districts",
+                "createLabel": "Create a new Districts",
+                "createOrEditLabel": "Create or edit a Districts"
+            },
+            "created": "A new Districts is created with identifier {{ param }}",
+            "updated": "A Districts is updated with identifier {{ param }}",
+            "deleted": "A Districts is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Districts {{ id }}?"
+            },
+            "detail": {
+                "title": "Districts"
+            },
+            "districtName": "District Name",
+            "postCode": "Post Code",
+            "cityName": "City Name"
+        }
+    }
+}

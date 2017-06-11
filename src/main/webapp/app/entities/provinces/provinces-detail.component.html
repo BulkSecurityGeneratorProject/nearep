@@ -1,0 +1,31 @@
+
+<div *ngIf="provinces">
+    <h2><span jhiTranslate="nearepApp.provinces.detail.title">Provinces</span> {{provinces.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="nearepApp.provinces.provinceName">Province Name</span></dt>
+        <dd>
+            <span>{{provinces.provinceName}}</span>
+        </dd>
+        <dt><span jhiTranslate="nearepApp.provinces.countryName">Country Name</span></dt>
+        <dd>
+            <div *ngIf="provinces.countryName">
+                <a [routerLink]="['/countries', provinces.countryName?.id]">{{provinces.countryName?.countryName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'provinces/'+ provinces.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

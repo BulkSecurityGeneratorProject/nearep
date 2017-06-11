@@ -1,0 +1,25 @@
+{
+    "nearepApp": {
+        "postAddress" : {
+            "home": {
+                "title": "Post Addresses",
+                "createLabel": "Create a new Post Address",
+                "createOrEditLabel": "Create or edit a Post Address"
+            },
+            "created": "A new Post Address is created with identifier {{ param }}",
+            "updated": "A Post Address is updated with identifier {{ param }}",
+            "deleted": "A Post Address is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Post Address {{ id }}?"
+            },
+            "detail": {
+                "title": "Post Address"
+            },
+            "streetAddress": "Street Address",
+            "officeTel": "Office Tel",
+            "officeFax": "Office Fax",
+            "officeEmail": "Office Email",
+            "districtName": "District Name"
+        }
+    }
+}
